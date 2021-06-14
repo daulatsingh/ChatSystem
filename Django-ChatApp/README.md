@@ -1,9 +1,8 @@
 
 # Django Chat Application
 
-A chat application built using django rest framework. The 
-user can search other users and add them as a friend and have 
-one to one chat with their friends.
+A chat application built using django framework. The 
+
 
 ## Screenshots
 
@@ -14,8 +13,9 @@ one to one chat with their friends.
 ## Installation
 
 ```
-pip install django
-pip install django-rest-framework
+django==1.11
+django-crispy-forms==1.12.0
+mysqlclient==1.3.9
 ```
 
 ## How to use?

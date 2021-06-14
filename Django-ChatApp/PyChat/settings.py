@@ -141,12 +141,3 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-
-GRAPH_MODELS = {
-  'all_applications': True,
-  'group_models': True,
-}
-
-GRAPH_MODELS = {
-  'app_labels': ["chat"],
-}

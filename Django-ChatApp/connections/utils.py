@@ -1,0 +1,2 @@
+class HTTPClientException(Exception):
+    pass

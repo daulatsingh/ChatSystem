@@ -1,0 +1,54 @@
+{% extends "chat/Base.html" %}
+{% load static %}
+{% block title %}User group relation{% endblock %}
+{% block content %}
+    <center>
+        <div class="wrapper" style="width: 400px;">
+            <h2 style="margin: 16px 0px">User Group Relation</h2>
+                        <ul class="list-group list-group-flush">
+                {% for user in added_users %}
+                        <li class="list-group-item ">
+                        <div class="row">
+                        <div class="col">
+                            <img src="{% static 'images/user_image.jpg' %}" style="width: 50px; height: 50px;">
+                        </div>
+                        <div class="col">
+                            <div class="row"><p>{{user.name}}</p></div>
+                        </div>
+                        </div>
+                        </li>
+                {% empty %}
+                    <div>Users is not available</div>
+                {% endfor %}
+            </ul>
+                        <h2 style="margin: 16px 0px">Add Users</h2>
+
+            <div class="topnav">
+                <div class="search-container">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for aval_user in user_details %}
+                          <li class="list-group-item list-group-item-action">
+                        <div class="row">
+                        <div class="col">
+                              <input type="checkbox" name="user-list" value="{{aval_user.id}}" style="width: 50px; height: 50px;">
+                        </div>
+                        <div class="col">
+                            <div class="row"><p>{{aval_user.name}}</p></div>
+                        </div>
+                        </div>
+                        </li>
+                        {% empty %}
+                        <div>New User is not available</div>
+                        {% endfor %}
+
+                       <button type="submit" class="btn btn-success" style="margin-top: 10px;">Add Users</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </center>
+
+
+{% endblock %}

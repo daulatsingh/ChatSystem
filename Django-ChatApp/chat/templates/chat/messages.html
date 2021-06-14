@@ -1,0 +1,23 @@
+{% extends 'chat/chats.html' %}
+{% load static %}
+
+{% block message %}
+{% for message in messages %}
+    {% if curr_user == message.sender_name %}
+        <div class="container darker" style="max-width: 990px">
+            <img src="{% static 'images/user_image.jpg' %}" alt="Avatar" class="right" style="width:100%;">
+            <p>{{message.description}}</p>
+            <span class="time-right">{{message.time}}</span>
+        </div>
+    {% else %}
+        <div class="container" style="max-width: 990px">
+            <img src="{% static 'images/user_image.jpg' %}" alt="Avatar" style="width:100%;">
+            <p>{{message.description}}</p>
+            <span class="time-left">{{message.time}}</span>
+        </div>
+    {% endif %}
+{% empty %}
+ <div>No chat available...</div>
+{% endfor %}
+
+{% endblock %}

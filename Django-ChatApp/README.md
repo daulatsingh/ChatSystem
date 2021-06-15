@@ -3,7 +3,7 @@
 
 A chat application built using django framework. The 
 
-
+- Python Version 3.6
 
 ## Installation
 

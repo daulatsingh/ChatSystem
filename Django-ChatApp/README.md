@@ -4,18 +4,15 @@
 A chat application built using django framework. The 
 
 
-## Screenshots
-
-![image](/Images/search.jpg)
-
-![image](/Images/chat.jpg)
 
 ## Installation
 
 ```
+pip==20.0.2
 django==1.11
 django-crispy-forms==1.12.0
-mysqlclient==1.3.9
+tornado==4.4.3
+tornado-redis==2.4.18
 ```
 
 ## How to use?
@@ -25,6 +22,11 @@ mysqlclient==1.3.9
 - Run the following command in the terminal:
 ```
 python manage.py runserver
+```
+-To create the websocket connection for chat app 
+```
+cd connections
+python main.py
 ```
 - It will run the application on your localhost.
 - Open the browser with the localhost address and enjoy the application.
